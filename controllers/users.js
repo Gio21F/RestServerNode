@@ -7,9 +7,10 @@ const { emailExiste } = require('../helpers/db-validators');
 const usersGet = async ( req = request ,res = response ) => {
 
     const { limit = 5, desde = 0 } = req.query;
+    const query = { status: true }
     const [ total, usuarios] = await Promise.all([
-        User.countDocuments({status:true}),
-        User.find({status:true})
+        User.countDocuments(query),
+        User.find(query)
             .skip(Number(desde))
             .limit(Number(limit))
     ])

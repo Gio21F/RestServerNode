@@ -8,8 +8,8 @@ const esAdminRole = ( req = request, res = response, next ) => {
         })
     }
 
-    const { rol, name } = req.user;
-    if ( rol !== 'ADMIN_ROLE' ) {
+    const { role, name } = req.user;
+    if ( role !== 'ADMIN_ROLE' ) {
         return res.status(401).json({
             msg: `El usuario: ${ name } no tiene acceso de administrador`
         })

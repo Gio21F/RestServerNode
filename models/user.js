@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const { existeUsuarioPorId } = require('../helpers/db-validators');
 
 
 const UserSchema = Schema({
