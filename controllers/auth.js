@@ -66,7 +66,7 @@ const googleSignIn = async(req, res=response) => {
                 google: true
             }
             
-            user = new User( data );
+            user = new User( data,  { new:true } );
             await user.save();
         }
 
